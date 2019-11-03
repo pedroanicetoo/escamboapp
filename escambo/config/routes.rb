@@ -1,11 +1,28 @@
 Escambo::Application.routes.draw do
-  devise_for :admins
+  namespace :site do
+    get "home/index"
+  end
 
+  namespace :backoffice do
+    get "dashboard/index"
+  end
+
+  devise_for :admins
   devise_for :members
 
-  get "home/index"
-  root :to => 'home#index'
-  get "/bemvindo" => 'home#index'
+  root :to => 'site/home#index'
+
+  #CONFIGURAÇÃO GERAL
+  #views
+    #admins
+    #backoffice
+    #...
+    #site
+      #home
+        #index.html.erb
+      #perfil
+        #index.html.erb
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

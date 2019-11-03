@@ -1,0 +1,4 @@
+##Generate devise user
+rails g devise user
+##Generate Model
+rails g model <Model_name> <attributes>
