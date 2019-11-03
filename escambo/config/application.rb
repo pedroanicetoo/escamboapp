@@ -33,8 +33,11 @@ module Escambo
     # assets precompilation
     config.assets.precompile += ['site.js']
     config.assets.precompile += ['backoffice.js']
+    config.assets.precompile += ['application.js']
     config.assets.precompile += ['site.css']
     config.assets.precompile += ['backoffice.css']
+    config.assets.precompile += ['application.css']
+
 
     # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 
@@ -65,7 +68,7 @@ module Escambo
     # This will create an empty whitelist of attributes available for mass-assignment for all models
     # in your app. As such, your models will need to explicitly whitelist or blacklist accessible
     # parameters by using an attr_accessible or attr_protected declaration.
-    config.active_record.whitelist_attributes = false
+    config.active_record.whitelist_attributes = true
 
     # Enable the asset pipeline
     config.assets.enabled = true
