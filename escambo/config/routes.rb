@@ -3,6 +3,8 @@ Escambo::Application.routes.draw do
     get 'home', to: 'home#index' ##quando for ../home acessa /home/index
   end
 
+  get 'backoffice', to: 'backoffice/dashboard#index'
+
   namespace :backoffice do
     get 'dashboard', to: 'dashboard#index'
   end
