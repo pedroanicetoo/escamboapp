@@ -1,12 +1,15 @@
 Escambo::Application.routes.draw do
-  namespace :site do
-    get 'home', to: 'home#index' ##quando for ../home acessa /home/index
-  end
+  get "categories/index"
 
   get 'backoffice', to: 'backoffice/dashboard#index'
 
   namespace :backoffice do
+    resources :categories, except: [:show, :destroy]
     get 'dashboard', to: 'dashboard#index'
+  end
+
+  namespace :site do
+    get 'home', to: 'home#index' ##quando for ../home acessa /home/index
   end
 
   devise_for :admins
