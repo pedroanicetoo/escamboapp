@@ -1,4 +1,5 @@
 Escambo::Application.routes.draw do
+
   get "categories/index"
 
   get 'backoffice', to: 'backoffice/dashboard#index'
@@ -6,13 +7,14 @@ Escambo::Application.routes.draw do
   namespace :backoffice do
     resources :categories, except: [:show, :destroy]
     get 'dashboard', to: 'dashboard#index'
+    get "admins/index"
   end
 
   namespace :site do
     get 'home', to: 'home#index' ##quando for ../home acessa /home/index
   end
 
-  devise_for :admins
+  devise_for :admins, :skip => [:registrations]
   devise_for :members
 
   root :to => 'site/home#index'

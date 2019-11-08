@@ -125,6 +125,7 @@ GEM
       rails-assets-jquery (>= 1.10.2)
     rails-assets-jquery (3.4.1)
     rails-assets-marked (0.7.0)
+    rails-assets-notifyjs (0.4.2)
     rails-erd (1.5.2)
       activerecord (>= 3.2)
       activesupport (>= 3.2)
@@ -199,6 +200,7 @@ DEPENDENCIES
   rails-assets-bootstrap-markdown!
   rails-assets-bootstrap.growl!
   rails-assets-marked!
+  rails-assets-notifyjs!
   rails-erd
   rails-i18n
   sass-rails (~> 3.2.3)
