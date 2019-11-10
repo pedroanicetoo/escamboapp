@@ -14,6 +14,7 @@ db:setup
 db:structure:dump
 db:version
 doc:app
+erd
 log:clear
 middleware
 notes
@@ -26,3 +27,4 @@ stats
 time:zones:all
 tmp:clear
 tmp:create
+utils:generate_admins

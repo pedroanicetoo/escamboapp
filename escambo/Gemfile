@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 #Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff http://rails-i18n.org
-gem 'rails-i18n'
+gem 'rails-i18n', '~> 3.0' # For 3.x
 #Rails gem of the Bootstrap based admin theme SB Admin 2. http://dreamingechoes.github.io/boots…
 gem 'bootstrap_sb_admin_base_v2'
 #Manage Procfile-based applications http://ddollar.github.com/foreman
@@ -20,7 +20,9 @@ source 'https://rails-assets.org' do
   # Bootstrap
   gem 'rails-assets-bootstrap', '3.3.7'
   #NotifyJs
-  gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+  gem 'rails-assets-notifyjs'
+  #Bootbox JS
+  gem 'rails-assets-bootbox'
   # Bootstrap Notify
   gem 'rails-assets-bootstrap.growl'
   # BootboxJS
@@ -54,6 +56,8 @@ group :development do
   gem 'awesome_rails_console'
   #Rails ERD runs on all Rails 3+ platforms: Ruby 1.8/1.9, Rubinius, or JRuby all work fine. Add Rails ERD as a plugin to your Ruby on Rails application. In your Gemfile...
   gem "rails-erd"
+  #A library for generating fake data such as names, addresses, and phone numbers.
+  gem 'faker'
 end
 
 # Use jquery as the JavaScript library
@@ -67,7 +71,6 @@ gem 'jbuilder', '~> 2.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
-
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

@@ -26,8 +26,16 @@
               <%= link_to edit_backoffice_admin_path(admin), :class => "btn btn-primary btn-circle" do%>
                 <i class="fa fa-list"></i>
               <% end %>
-              <button type="button" class="btn btn-danger btn-circle" disabled><i class="fa fa-minus"></i>
-              </button>
+
+              <% if current_admin.id != admin.id %>
+                <%= link_to backoffice_admin_path(admin), method: :delete, :class => 'btn btn-danger btn-circle', data: {confirm: "Você deseja realmente excluir (<b>#{admin.email}</b>) ?"} do %>
+                  <i class="fa fa-minus"></i>
+                <% end %>
+              <% else %>
+                <%= link_to '#', :disabled => 'disabled', :class => 'btn btn-danger btn-circle' do %>
+                  <i class="fa fa-minus"></i>
+                <% end %>
+              <% end %>
             </td>
           </tr>
           <% end %>
