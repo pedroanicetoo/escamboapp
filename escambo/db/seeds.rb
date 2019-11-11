@@ -30,7 +30,8 @@ puts "Cadastrando Administrador Padrão..."
       name: 'Admin',
       email: 'admin@admin.com',
       password: '123456',
-      password_confirmation: '123456')
+      password_confirmation: '123456',
+      role: 0)
 
 puts "Cadastrando Administrador Padrão...[OK]"
 
