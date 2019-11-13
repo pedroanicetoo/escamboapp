@@ -1,4 +1,9 @@
 class Admin < ActiveRecord::Base
+  scope :with_full_access, -> { where(role: 0) }
+  # def self.with_full_access
+  #   where(role: 0)
+  # end
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -12,7 +17,7 @@ class Admin < ActiveRecord::Base
   # attr_accessible :title, :body
 
   def role_br
-    if self.role == 1
+    if self.role == 0
      'Acesso Completo'
     else
      'Acesso Restrito'

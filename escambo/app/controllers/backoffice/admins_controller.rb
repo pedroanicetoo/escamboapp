@@ -2,6 +2,8 @@ class Backoffice::AdminsController < BackofficeController
   before_filter :set_admin, :only => [:edit, :update, :destroy]
   def index
     @admins = Admin.all
+    # exemplo de uso de scope criado no model
+    # @admins = Admin.with_full_access
   end
 
   def new
