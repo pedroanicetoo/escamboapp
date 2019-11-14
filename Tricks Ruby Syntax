@@ -1,0 +1,38 @@
+pry(main)> abc = {a: 123, b:456, c:789}
+  => {:a=>123, :b=>456, :c=>789}
+pry(main)> abc.except(:c)
+  => {:a=>123, :b=>456}
+pry(main)> abc
+  => {:a=>123, :b=>456, :c=>789}
+pry(main)> abc.except(:c, :b)
+  => {:a=>123}
+pry(main)> abc.except!(:c)
+  => {:a=>123, :b=>456}
+pry(main)> abc
+  => {:a=>123, :b=>456}
+pry(main)> abc = {a: 123, b:456, c:789}
+  => {:a=>123, :b=>456, :c=>789}
+pry(main)> abc.extract!(:c)
+  => {:c=>789}
+pry(main)> abc
+  => {:a=>123, :b=>456}
+pry(main)> x = 123
+  => 123
+pry(main)> s = "oi"
+  => "oi"
+pry(main)> s = "oi #{x}"
+  => "oi 123"
+pry(main)> s = 'oi #{x}'
+  => "oi \#{x}"
+pry(main)> s = %Q(oi #{x})
+  => "oi 123"
+pry(main)> s = %q(oi #{x})
+  => "oi \#{x}"
+pry(main)> s = %w(pedro pereira)
+  => ["pedro", "pereira"]
+pry(main)> s = %W(pedro pereira)
+  => ["pedro", "pereira"]
+pry(main)> s = %W(pedro pereira #{x})
+  => ["pedro", "pereira", "123"]
+pry(main)> s = %w(pedro pereira #{x})
+  => ["pedro", "pereira", "\#{x}"]

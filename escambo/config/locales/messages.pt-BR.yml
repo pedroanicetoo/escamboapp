@@ -15,3 +15,6 @@
     not_authorized: Você não está autorizado a executar essa ação.
     email_delivered: Email enviado com sucesso!
     email_not_delivered: Erro ao enviar email. Tente novamente
+    access:
+      full_access: 'Acesso Completo'
+      restricted_access: 'Acesso Restrito'

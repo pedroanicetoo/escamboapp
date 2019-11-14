@@ -26,7 +26,13 @@
             <td><%= admin.id %></td>
             <td><%= admin.name %></td>
             <td><%= admin.email %></td>
-            <td><%= admin.role_br %></td>
+            <td>
+            <% if admin.role_br == 'full_access' %>
+              <%= t('messages.access.full_access') %>
+            <% else %>
+              <%= t('messages.access.restricted_access') %>
+            <% end %>
+            </td>
             <td style="width: 100px;">
               <%= link_to edit_backoffice_admin_path(admin), :class => "btn btn-primary btn-circle" do%>
                 <i class="fa fa-list"></i>
