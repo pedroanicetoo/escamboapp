@@ -1,9 +1,12 @@
 class Backoffice::AdminsController < BackofficeController
   before_filter :set_admin, :only => [:edit, :update, :destroy]
+  after_filter :verify_authorized, :only => [:new]
+  after_filter  :verify_policy_scoped, :only => [:index]
   def index
-    @admins = Admin.all
+    # @admins = Admin.all
     # exemplo de uso de scope criado no model
     # @admins = Admin.with_full_access
+    @admins = policy_scope(Admin)
   end
 
   def new
