@@ -29,6 +29,7 @@ class Backoffice::AdminsController < BackofficeController
 
   def update
     if @admin.update_attributes(params[:admin])
+      AdminMailer.update_email(current_admin, @admin).deliver
       redirect_to backoffice_admins_path, notice: "O administrador (#{@admin.email}) foi atualizado com sucesso"
     else
       render :edit

@@ -62,6 +62,8 @@ group :development do
   gem "rails-erd"
   #A library for generating fake data such as names, addresses, and phone numbers.
   gem 'faker'
+  #MailCatcher
+  gem 'mailcatcher'
 end
 
 # Use jquery as the JavaScript library

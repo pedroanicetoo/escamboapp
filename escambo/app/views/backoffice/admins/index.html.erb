@@ -17,7 +17,6 @@
           <tr>
             <th>#</th>
             <th><%= model_class.human_attribute_name(:name) %></th>
-            <th><%= model_class.human_attribute_name(:email) %></th>
             <th><%= model_class.human_attribute_name(:role) %></th>
             <th></th>
           </tr>
@@ -27,7 +26,6 @@
           <tr>
             <td><%= admin.id %></td>
             <td><%= admin.name %></td>
-            <td><%= admin.email %></td>
             <td>
             <% if admin.role_br == 'full_access' %>
               <%= t('messages.access.full_access') %>
@@ -35,7 +33,10 @@
               <%= t('messages.access.restricted_access') %>
             <% end %>
             </td>
-            <td style="width: 100px;">
+            <td style="width: 120px;">
+              <%= link_to edit_backoffice_send_mail_path(admin.id), :class => "btn btn-info btn-circle", remote:true do %>
+                <i class="fa fa-envelope"></i>
+              <% end %>
               <%= link_to edit_backoffice_admin_path(admin), :class => "btn btn-primary btn-circle" do %>
                 <i class="fa fa-list"></i>
               <% end %>
@@ -59,3 +60,4 @@
   </div>
   <!-- /.panel-body -->
 </div>
+<%= render partial: "backoffice/admins/shared/send_mail" %>

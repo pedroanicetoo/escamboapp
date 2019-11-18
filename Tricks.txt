@@ -1,3 +1,5 @@
+##Generate Controller
+rails g controller Backoffice/SendMail
 ##Generate devise user
 rails g devise user
 ##Generate Model
