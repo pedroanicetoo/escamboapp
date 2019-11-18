@@ -36,11 +36,11 @@
             <% end %>
             </td>
             <td style="width: 100px;">
-              <%= link_to edit_backoffice_admin_path(admin), :class => "btn btn-primary btn-circle" do%>
+              <%= link_to edit_backoffice_admin_path(admin), :class => "btn btn-primary btn-circle" do %>
                 <i class="fa fa-list"></i>
               <% end %>
 
-              <% if current_admin.id != admin.id %>
+              <% if (current_admin.id != admin.id) && policy(Admin).destroy? %>
                 <%= link_to backoffice_admin_path(admin), method: :delete, :class => 'btn btn-danger btn-circle', data: {confirm: t('messages.confirm_with', item: admin.name) } do %>
                   <i class="fa fa-minus"></i>
                 <% end %>
