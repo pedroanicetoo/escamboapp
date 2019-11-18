@@ -13,6 +13,8 @@ gem 'devise'
 gem 'devise-i18n'
 #Minimal authorization through OO design and pure Ruby classes
 gem "pundit"
+#Taint and required checking for Action Pack and enforcement in Active Model
+gem 'strong_parameters', '~> 0.2.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

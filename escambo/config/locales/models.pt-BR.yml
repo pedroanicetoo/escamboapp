@@ -38,6 +38,9 @@
         password_confirmation: Confirmação de senha
         name: Nome
         role: Tipo de Acesso
+        access:
+          full_access: 'Acesso Completo'
+          restricted_access: 'Acesso Restrito'
       category:
         id: Código
         created_at: Criado em

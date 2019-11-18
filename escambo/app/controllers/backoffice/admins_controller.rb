@@ -28,7 +28,7 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def update
-    if @admin.update_attributes(params_admin)
+    if @admin.update_attributes(params[:admin])
       redirect_to backoffice_admins_path, notice: "O administrador (#{@admin.email}) foi atualizado com sucesso"
     else
       render :edit
@@ -49,5 +49,24 @@ class Backoffice::AdminsController < BackofficeController
   def set_admin
     @admin = Admin.find(params[:id])
   end
+
+  def params_admin
+
+    if password_blank?
+        params[:admin].except!(:password, :password_confirmation)
+    end
+
+    if @admin.blank?
+      params[:admin]
+    else
+      params[policy(@admin).permitted_attributes]
+    end
+
+  end
+
+  def password_blank?
+     params[:admin][:password].blank? &&
+     params[:admin][:password_confirmation].blank?
+   end
 
 end

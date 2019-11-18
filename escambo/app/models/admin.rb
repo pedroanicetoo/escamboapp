@@ -17,15 +17,6 @@ class Admin < ActiveRecord::Base
   #1 - restricted_access
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :role
 
-  def params_admin
-    passwd = params[:admin][:password]
-    passwd_confirmation = params[:admin][:password_confirmation]
-
-    if passwd.blank? && passwd.confirmation.blank?
-      params[:admin].except!(:password, :password_confirmation)
-    end
-
-  end
   # attr_accessible :title, :body
 
   def role_br
