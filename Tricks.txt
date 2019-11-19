@@ -1,6 +1,11 @@
-##Generate Controller
-rails g controller Backoffice/SendMail
-##Generate devise user
+1 ) ##Generate mailer
+rails g mailer AdminMailer
+2 )##Generate devise user
 rails g devise user
-##Generate Model
+3 )##Generate scaffold
+rails generate scaffold product name:string qtd:integer
+4 )##Generate Model
 rails g model <Model_name> <attributes>
+5 )##Generate Controller
+rails g controller Backoffice/SendMail
+

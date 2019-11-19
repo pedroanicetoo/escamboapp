@@ -1,3 +1,4 @@
+##Não compilável!!!
 ==========================> USO DE %W e %Q <===========================>
 pry(main)> abc = {a: 123, b:456, c:789}
   => {:a=>123, :b=>456, :c=>789}
@@ -51,5 +52,36 @@ Development [2] escambo(main)> u1 = User.new("Pedro Aniceto", 24, "pedro@madri")
 Development [3] escambo(main)> u1.name
 "Pedro Aniceto"
 
+==========================> begin / rescue / ensure <===========================>
+Exemplos:
 
+def levantar_erro
+  begin
+    p ">>>>>>>>>>antes do erro"
+    raise "erro de alguma coisa..."
+    p "depois do erro"
+  rescue Exception => e
+    p "pode dar erro que eu continuo ...........ERRO QUE DEU: #{e}"
+  end
+end
+
+levantar_erro
+
+(Olhando um erro específico...)
+
+def levantar_erro
+  begin
+    p ">>>>>>>>>>antes do erro"
+    File.open("abc.txt")
+    p "Depois do erro"
+  rescue Errno::ENOENT
+    p "O arquivo não existe..."
+  rescue Exception => e
+    p "pode dar erro que eu continuo ...........ERRO QUE DEU: #{e}"
+  ensure
+    p ">>>>>Isso é feito de qualquer forma!"
+  end
+end
+
+levantar_erro
 
