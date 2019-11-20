@@ -1,3 +1,5 @@
+rails g  (Pesquisar generates)
+
 1 ) ##Generate mailer
 rails g mailer AdminMailer
 2 )##Generate devise user
@@ -8,4 +10,7 @@ rails generate scaffold product name:string qtd:integer
 rails g model <Model_name> <attributes>
 5 )##Generate Controller
 rails g controller Backoffice/SendMail
-
+6)##Generate Money_Rails
+rails g money_rails:initializer
+7)##Generate Migration
+rails g migration addPriceCentsToAds price_cents:integer

@@ -85,3 +85,15 @@ end
 
 levantar_erro
 
+==========================> Limit/Offset, Order, Excerpt, Truncate <===========================>
+Client.limit(5) ##Lista os primeiros 5 clientes
+Cliente.limit(5).offset(30)  ##Começa a partir do 10 e pega os 5 elementos 30-35
+##Order
+@categories = Category.order(:description) ##Ordenando um index pelo atributo :description
+@categories = Category.order(description: :desc) # ordem descendente
+##Excerpt
+excerpt('This is an example', 'an', radius: 5) # evidencia paravra an e pega 5 caractereas a direita e esquerda da mesma
+ => ...s is an exam...
+#Trucate
+truncate("Once upon a time in a world far far away", 14) #14 primeiros caracteres evidenciados
+ => Once upon a...
