@@ -35,15 +35,15 @@ ActiveRecord::Schema.define(:version => 20191110191752) do
 
   create_table "ads", :force => true do |t|
     t.string   "title"
-    t.text     "destription"
+    t.text     "description"
     t.integer  "category_id"
-    t.integer  "members_id"
+    t.integer  "member_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   add_index "ads", ["category_id"], :name => "index_ads_on_category_id"
-  add_index "ads", ["members_id"], :name => "index_ads_on_members_id"
+  add_index "ads", ["member_id"], :name => "index_ads_on_member_id"
 
   create_table "categories", :force => true do |t|
     t.string   "description", :limit => 60

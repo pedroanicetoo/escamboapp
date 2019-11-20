@@ -28,3 +28,4 @@ time:zones:all
 tmp:clear
 tmp:create
 utils:generate_admins
+utils:generate_ads
