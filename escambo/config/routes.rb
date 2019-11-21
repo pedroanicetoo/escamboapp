@@ -14,6 +14,10 @@ Escambo::Application.routes.draw do
 
   namespace :site do
     get 'home', to: 'home#index' ##quando for ../home acessa /home/index
+
+    namespace :profile do
+      resources :dashboard, only: [:index]
+    end
   end
 
   devise_for :admins, :skip => [:registrations]

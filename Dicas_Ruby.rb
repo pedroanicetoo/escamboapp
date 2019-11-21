@@ -97,3 +97,12 @@ excerpt('This is an example', 'an', radius: 5) # evidencia paravra an e pega 5 c
 #Trucate
 truncate("Once upon a time in a world far far away", 14) #14 primeiros caracteres evidenciados
  => Once upon a...
+
+==========================> system, backticks, %x, exec <===========================>
+system "pwd"
+/home/pedro/workspace/escamboapp/escambo
+true
+`pwd`
+"/home/pedro/workspace/escamboapp/escambo\n"
+%x(pwd)
+"/home/pedro/workspace/escamboapp/escambo\n"
