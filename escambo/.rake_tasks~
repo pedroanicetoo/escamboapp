@@ -35,3 +35,5 @@ tmp:clear
 tmp:create
 utils:generate_admins
 utils:generate_ads
+utils:generate_members
+utils:setup_dev
