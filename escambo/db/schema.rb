@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20191120030400) do
+ActiveRecord::Schema.define(:version => 20191121015650) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -38,9 +38,13 @@ ActiveRecord::Schema.define(:version => 20191120030400) do
     t.text     "description"
     t.integer  "category_id"
     t.integer  "member_id"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-    t.integer  "price_cents", :default => 0
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+    t.integer  "price_cents",          :default => 0
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   add_index "ads", ["category_id"], :name => "index_ads_on_category_id"
