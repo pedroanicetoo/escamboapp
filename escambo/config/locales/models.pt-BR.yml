@@ -60,6 +60,7 @@
         finish_date: Data de finalização
         image: Imagem
         price: Preço
+        finish_date: Data de Finalização
       profile_member:
         id: Código
         created_at: Criado em

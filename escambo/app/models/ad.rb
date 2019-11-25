@@ -2,6 +2,11 @@ class Ad < ActiveRecord::Base
   belongs_to :category
   belongs_to :member
 
+  #validates
+  validates :title, :description, :category, presence:true
+  validates :picture, :finish_date, presence:true
+  validates :price, numericality: { greater_than: 0 }
+
   #scopes
   scope :descending_order, -> (quantity = 10) { limit(quantity).order(created_at: :desc) }
   scope :to_the, -> (member_id) { where(member_id: member_id) }
@@ -20,5 +25,6 @@ class Ad < ActiveRecord::Base
                   :category_id,
                   :category_description,
                   :price,
-                  :picture
+                  :picture,
+                  :finish_date
 end

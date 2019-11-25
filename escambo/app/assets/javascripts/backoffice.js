@@ -1,6 +1,5 @@
 //= require bootbox
 //= require bootstrap_sb_admin_base_v2
-//= require notifyjs
 console.log('js do backoffice');
 
 // Sobrescreve o data-confirm do Rails

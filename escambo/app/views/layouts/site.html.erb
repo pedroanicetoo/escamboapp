@@ -13,9 +13,6 @@
   <%= stylesheet_link_tag    "application", :media => "all", 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    "site", :media => "all", 'data-turbolinks-track' => true %>
 
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'site' %>
-
   <%= csrf_meta_tags %>
   <!-- Bootstrap core CSS -->
 
@@ -26,6 +23,9 @@
   <%= render partial: "layouts/site_shared/navigation" %>
   <%= yield %>
   <%= render partial: "layouts/site_shared/footer" %>
+
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'site' %>
 </body>
 
 </html>

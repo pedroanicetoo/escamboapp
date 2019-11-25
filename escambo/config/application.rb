@@ -35,8 +35,10 @@ module Escambo
     config.assets.precompile += ['site/profile.js']
     config.assets.precompile += ['backoffice.js']
     config.assets.precompile += ['application.js']
+    config.assets.precompile += ['site/profile/ads.js']
     config.assets.precompile += ['site.css']
     config.assets.precompile += ['site/profile.css']
+    config.assets.precompile += ['site/profile/ads.css']
     config.assets.precompile += ['backoffice.css']
     config.assets.precompile += ['application.css']
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20191121015650) do
+ActiveRecord::Schema.define(:version => 20191125162443) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20191121015650) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.date     "finish_date"
   end
 
   add_index "ads", ["category_id"], :name => "index_ads_on_category_id"
