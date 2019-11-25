@@ -3,7 +3,8 @@ class Ad < ActiveRecord::Base
   belongs_to :member
 
   #scopes
-  scope :last_six, -> { limit(6).order(created_at: :desc) }
+  scope :descending_order, -> (quantity = 10) { limit(quantity).order(created_at: :desc) }
+  scope :to_the, -> (member_id) { where(member_id: member_id) }
 
   #paperclip
   has_attached_file :picture, styles: { large: "800x300#", medium: "320x150#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
@@ -14,7 +15,10 @@ class Ad < ActiveRecord::Base
   attr_accessible :description,
                   :title,
                   :member,
+                  :member_id,
                   :category,
+                  :category_id,
+                  :category_description,
                   :price,
                   :picture
 end

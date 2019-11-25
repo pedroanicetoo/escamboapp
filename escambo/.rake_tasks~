@@ -13,6 +13,10 @@ db:seed
 db:setup
 db:structure:dump
 db:version
+dev:generate_admins
+dev:generate_ads
+dev:generate_members
+dev:setup
 doc:app
 erd
 log:clear
@@ -33,7 +37,3 @@ stats
 time:zones:all
 tmp:clear
 tmp:create
-utils:generate_admins
-utils:generate_ads
-utils:generate_members
-utils:setup_dev

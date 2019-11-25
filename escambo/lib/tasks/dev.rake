@@ -10,9 +10,9 @@ namespace :dev do
       puts "Criando BD...#{%x(rake db:create)}"
       puts %x(rake db:migrate)
       puts %x(rake db:seed)
-      puts %x(rake utils:generate_admins)
-      puts %x(rake utils:generate_members)
-      puts %x(rake utils:generate_ads)
+      puts %x(rake dev:generate_admins)
+      puts %x(rake dev:generate_members)
+      puts %x(rake dev:generate_ads)
 
     puts "Executando o setup para desenvolvimento...[OK]"
   end
