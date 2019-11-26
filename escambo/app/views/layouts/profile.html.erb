@@ -66,10 +66,8 @@
   <%#= javascript_include_tag 'site/profile/ads' %>
   <%= yield :javascripts %>
 
-  <!-- /#wrapper -->
-  <% if notice %>
-    <%= javascript_tag "$.notify('#{notice}', 'success');" %>
-  <% end %>
+  <%= render partial: 'layouts/shared/notifications' %>
+
 </body>
 
 </html>
