@@ -21,4 +21,5 @@ sudo apt-get install imagemagick
 [rails-erd](https://github.com/voormedia/rails-erd) - Entidade relacional
 [faker](https://github.com/faker-ruby/faker) - Facilita na criação de tasks
 [lerolero_generator](https://github.com/jacksonpires/lerolero_generator) -Facilita na criação de tasks
-
+### Callbacks documentation
+https://guides.rubyonrails.org/active_record_callbacks.html
