@@ -4,8 +4,8 @@ class Ad < ActiveRecord::Base
   before_save :md_to_html
 
   #Assossiations 
-  belongs_to :category
   belongs_to :member
+  belongs_to :category, counter_cache: true 
 
   #validates
   validates :title, :description_md, :description_short, :category, presence:true
