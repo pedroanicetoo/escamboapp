@@ -43,7 +43,6 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-markdown'
   # Marked
   gem 'rails-assets-marked'
-
 end
 
 # Gems used only for assets and not required
