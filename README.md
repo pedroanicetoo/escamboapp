@@ -23,3 +23,5 @@ sudo apt-get install imagemagick
 [lerolero_generator](https://github.com/jacksonpires/lerolero_generator) -Facilita na criação de tasks
 ### Callbacks documentation
 https://guides.rubyonrails.org/active_record_callbacks.html
+### Associations Basics (when use counter_cache)
+https://guides.rubyonrails.org/association_basics.html
