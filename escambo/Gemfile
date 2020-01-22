@@ -77,6 +77,8 @@ group :development do
 end
 #The safe Markdown parser, reloaded. 
 gem 'redcarpet'
+#FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord
+gem 'friendly_id'
 #jQuery UI for the Rails asset pipeline
 gem 'jquery-ui-rails'
 # Use jquery as the JavaScript library
