@@ -1,2 +1,8 @@
 //= require bootstrap
-console.log('js do site');
+//= require wiselinks
+
+/** Wiselinks Gem **/
+
+$(function() {
+	window.wiselinks = new Wiselinks($('#home-detail'));
+});
