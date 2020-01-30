@@ -13,9 +13,16 @@ class Ad < ActiveRecord::Base
   validates :price, numericality: { greater_than: 0 }
 
   #scopes
-  scope :descending_order, -> (quantity = 10) { limit(quantity).order(created_at: :desc) }
+  scope :descending_order, -> (quantity = 10, page = 1) {
+   limit(quantity).order(created_at: :desc).page(page).per(6) }
+
   scope :to_the, -> (member_id) { where(member_id: member_id) }
+
   scope :by_category, -> (id) { where(category_id: id) }
+
+  scope :search, -> (term, page = 1) { 
+    where("lower(title) LIKE?", "%#{term.downcase}%").page(page).per(6) }
+
 
   #paperclip
   has_attached_file :picture, styles: { large: "900x400#", medium: "320x150#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
