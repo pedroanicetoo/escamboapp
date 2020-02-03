@@ -1,11 +1,19 @@
 # Escamboapp - Aplicação prática ROR
 Links importantes de algumas documentações
 ## Dependências do projeto
-[Image Magic](https://imagemagick.org/index.php)
+* [Image Magic](https://imagemagick.org/index.php)
 ```
 sudo apt-get update
 sudo apt-get install imagemagick
 ```
+
+* Graphviz (https://www.graphviz.org) - Apenas para Ambiente de desenvolvimento
+
+```
+sudo apt-get update
+sudo apt-get install graphviz
+```
+
 #### API ROR LINK
 [api guide ruby on rails](https://guides.rubyonrails.org)
 ##### Documentação de algumas gems

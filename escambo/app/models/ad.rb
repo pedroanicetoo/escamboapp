@@ -1,4 +1,6 @@
 class Ad < ActiveRecord::Base
+  #Constants
+  QTT_PER_PAGE = 6
 
   # Callbacks
   before_save :md_to_html
@@ -13,15 +15,15 @@ class Ad < ActiveRecord::Base
   validates :price, numericality: { greater_than: 0 }
 
   #scopes
-  scope :descending_order, -> (quantity = 10, page = 1) {
-   limit(quantity).order(created_at: :desc).page(page).per(6) }
+  scope :descending_order, -> (page) {
+   order(created_at: :desc).page(page).per(QTT_PER_PAGE) }
 
   scope :to_the, -> (member_id) { where(member_id: member_id) }
 
   scope :by_category, -> (id) { where(category_id: id) }
 
   scope :search, -> (term, page = 1) { 
-    where("lower(title) LIKE?", "%#{term.downcase}%").page(page).per(6) }
+    where("lower(title) LIKE?", "%#{term.downcase}%").page(page).per(QTT_PER_PAGE) }
 
 
   #paperclip
