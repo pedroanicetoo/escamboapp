@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20200122163901) do
+ActiveRecord::Schema.define(:version => 20200204162601) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -62,6 +62,16 @@ ActiveRecord::Schema.define(:version => 20200122163901) do
   end
 
   add_index "categories", ["slug"], :name => "index_categories_on_slug", :unique => true
+
+  create_table "comments", :force => true do |t|
+    t.text     "body"
+    t.integer  "member_id"
+    t.integer  "ad_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "comments", ["member_id"], :name => "index_comments_on_member_id"
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false

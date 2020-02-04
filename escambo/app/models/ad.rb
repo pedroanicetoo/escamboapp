@@ -8,6 +8,7 @@ class Ad < ActiveRecord::Base
   #Assossiations 
   belongs_to :member
   belongs_to :category, counter_cache: true 
+  has_many :comments
 
   #validates
   validates :title, :description_md, :description_short, :category, presence:true
@@ -43,7 +44,9 @@ class Ad < ActiveRecord::Base
                   :category_description,
                   :price,
                   :picture,
-                  :finish_date
+                  :finish_date,
+                  :comment_id,
+                  :comment
 
 
   private
