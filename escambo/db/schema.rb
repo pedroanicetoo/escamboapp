@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20191125162443) do
+ActiveRecord::Schema.define(:version => 20200204162601) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(:version => 20191125162443) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.date     "finish_date"
+    t.text     "description_md"
+    t.text     "description_short"
   end
 
   add_index "ads", ["category_id"], :name => "index_ads_on_category_id"
@@ -53,9 +55,34 @@ ActiveRecord::Schema.define(:version => 20191125162443) do
 
   create_table "categories", :force => true do |t|
     t.string   "description", :limit => 60
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.integer  "ads_count",                 :default => 0
+    t.string   "slug"
   end
+
+  add_index "categories", ["slug"], :name => "index_categories_on_slug", :unique => true
+
+  create_table "comments", :force => true do |t|
+    t.text     "body"
+    t.integer  "member_id"
+    t.integer  "ad_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "comments", ["member_id"], :name => "index_comments_on_member_id"
+
+  create_table "friendly_id_slugs", :force => true do |t|
+    t.string   "slug",                         :null => false
+    t.integer  "sluggable_id",                 :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type", :unique => true
+  add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "members", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

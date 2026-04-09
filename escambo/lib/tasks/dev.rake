@@ -13,6 +13,7 @@ namespace :dev do
       puts %x(rake dev:generate_admins)
       puts %x(rake dev:generate_members)
       puts %x(rake dev:generate_ads)
+      puts %x(rake dev:generate_comments)
 
     puts "Executando o setup para desenvolvimento...[OK]"
   end
@@ -46,10 +47,11 @@ namespace :dev do
     5.times do
       Ad.create!(
           title: Faker::Lorem.sentence([2,3,4,5].sample),
-          description: LeroleroGenerator.paragraph([1,2,3].sample),
+          description_md: markdown_fake,
+          description_short: Faker::Lorem.sentence([2,3].sample),
           member: Member.first,
           category: Category.all.sample,
-          price: "#{Random.rand(500)},#{Random.rand(99)}",
+          price: "#{Random.rand(500)+1},#{Random.rand(99)}",
           finish_date: Date.today + Random.rand(90),
           picture: File.new(Rails.root.join('public', 'template', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
         )
@@ -58,10 +60,11 @@ namespace :dev do
     100.times do
       Ad.create!(
           title: Faker::Lorem.sentence([2,3,4,5].sample),
-          description: LeroleroGenerator.paragraph([1,2,3].sample),
+          description_md: markdown_fake,
+          description_short: Faker::Lorem.sentence([2,3].sample),
           member: Member.all.sample,
           category: Category.all.sample,
-          price: "#{Random.rand(500)},#{Random.rand(99)}",
+          price: "#{Random.rand(500)+1},#{Random.rand(99)}",
           finish_date: Date.today + Random.rand(90),
           picture: File.new(Rails.root.join('public', 'template', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
         )
@@ -88,6 +91,25 @@ namespace :dev do
       puts "Cadastrando Membros...[OK]"
   end
 
+  def markdown_fake
+    %x(ruby -e "require 'doctor_ipsum'; puts DoctorIpsum::Markdown.entry")
+  end
+
+  desc "Cria Comentários Fake"
+  task :generate_comments => :environment do
+
+    puts "Cadastrando comentarios..."
+    Ad.all.each do |ad|
+      (Random.rand(3)).times do
+        Comment.create!(
+            body: Faker::Lorem.paragraph([1,2,3].sample),
+            member: Member.all.sample,
+            ad: ad
+          )
+      end
+    end
+      puts "Cadastrando comentarios...[OK]"
+  end  
 
 
 end

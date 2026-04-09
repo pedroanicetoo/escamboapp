@@ -18,6 +18,13 @@
       ad:
         one: Anúncio
         other: Anúncios
+        id: Código
+        created_at: Criado em
+        updated_at: Atualizado em
+        title: Título
+        description: Descrição
+        descrition_md: Descrição/Markdown
+        description_short: Breve Descrição
       profile_member:
         one: Perfil
         other: Perfil

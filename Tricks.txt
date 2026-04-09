@@ -5,7 +5,9 @@ rails g mailer AdminMailer
 2 )##Generate devise user
 rails g devise user
 3 )##Generate scaffold
-rails generate scaffold product name:string qtd:integer
+rails g scaffold product name:string qtd:integer
+  3.1)##Generate scaffold with backbone
+    rails g backbone:scaffold entry
 4 )##Generate Model
 rails g model <Model_name> <attributes>
 5 )##Generate Controller
