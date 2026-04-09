@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.17'
 #Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff http://rails-i18n.org
 gem 'rails-i18n', '~> 3.0' # For 3.x
 #Rails gem of the Bootstrap based admin theme SB Admin 2. http://dreamingechoes.github.io/boots…
